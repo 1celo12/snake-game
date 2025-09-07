@@ -1,5 +1,9 @@
 # Godot 4+ specific ignores
+.vscode/settings.json
 .godot/
 /android/
+<<<<<<< HEAD
 .vscode
 assets
+=======
+>>>>>>> origin/master
