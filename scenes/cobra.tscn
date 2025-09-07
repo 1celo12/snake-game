@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://ds8bavxwuaf6i"]
+
+[ext_resource type="Texture2D" uid="uid://eknwo3iie4wg" path="res://sprites/Snake sprite sheet.png" id="1_avnbh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x40ej"]
+atlas = ExtResource("1_avnbh")
+region = Rect2(0, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8mt4"]
+atlas = ExtResource("1_avnbh")
+region = Rect2(0, 42, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxuhc"]
+atlas = ExtResource("1_avnbh")
+region = Rect2(0, 84, 42, 42)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1jai2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x40ej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8mt4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yxuhc")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3qfqb"]
+
+[node name="Cobra" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_1jai2")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.111052
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(42, 0)
+rotation = 1.5708
+texture = ExtResource("1_avnbh")
+hframes = 3
+vframes = 3
+frame = 8
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(84, 0)
+rotation = -1.5708
+texture = ExtResource("1_avnbh")
+hframes = 3
+vframes = 3
+frame = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_3qfqb")

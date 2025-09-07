@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwm5uavybqqqc"]
+
+[ext_resource type="Script" uid="uid://c5fx0bam484f4" path="res://scripts/test.gd" id="1_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://btlkckdowe34r" path="res://scenes/maca.tscn" id="2_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://ds8bavxwuaf6i" path="res://scenes/cobra.tscn" id="3_iywne"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_lnu2h")
+
+[node name="Maca" parent="." instance=ExtResource("2_lbhrr")]
+position = Vector2(236, 156)
+
+[node name="Maca2" parent="." instance=ExtResource("2_lbhrr")]
+position = Vector2(254, 297)
+
+[node name="Maca3" parent="." instance=ExtResource("2_lbhrr")]
+position = Vector2(391, 177)
+
+[node name="Maca4" parent="." instance=ExtResource("2_lbhrr")]
+position = Vector2(159, 221)
+
+[node name="Cobra" parent="." instance=ExtResource("3_iywne")]
+position = Vector2(460, 177)
